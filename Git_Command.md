@@ -120,6 +120,51 @@
     * 撤销 **仓库区** 的修改
         即回退版本，见上一节内容
 
+* 关联 Github 远程仓库
+
+    * 创建SSH Key
+
+        * 如果 `C:\Users\sunyudi\.ssh` 路径下有 `id_rsa` 和 `id_rsa.pub` 这两个文件，可直接跳到下一步
+
+        * 如果没有，则需要在 `Git Bash` 中执行 `ssh-keygen -t rsa -C "youremail@example.com"` 命令，生成 `C:\Users\sunyudi\.ssh\id_rsa` 和 `C:\Users\sunyudi\.ssh\id_rsa.pub`
+
+            ![](Assets/Images/2019-03-22-15-47-16.png)
+
+    * 添加SSH Key
+
+        * 登录 Github，输入 `id_rsa.pub` 中的内容作为公钥
+
+            ![](Assets/Images/2019-03-22-15-50-23.png)
+
+    * 创建远程仓库
+
+        * 在 Github 中新建 Repository，复制 HTTPS 或 SSH
+
+            ![](Assets/Images/2019-03-22-16-05-20.png)
+    
+    * 将本地库关联到远程库
+
+        * 在 Git Bash 中执行 `git remote add origin https://github.com/ys16514/GMAutoMail.git` 命令，正常情况下执行完成后不会显示任何内容
+
+            ![](Assets/Images/2019-03-22-16-09-10.png)
+
+        * 但是，关联仓库时可能会发生异常，如下图。需要先执行 `git remote rm origin` 命令清除关联，再重新关联
+
+            ![](Assets/Images/2019-03-22-16-13-50.png)
+
+            ![](Assets/Images/2019-03-22-16-15-51.png)
+
+        * 如果使用 SSH 关联远程库，可能会发生如下图的错误，则需要先清除关联，再使用 HTTPS 关联
+
+            ![](Assets/Images/2019-03-22-16-21-59.png)
+
+    * 将本地库 `commit` 的内容推送到远程库
+
+        * 如果是第一次向远程仓库推送，执行 `git push -u origin master` 命令
+
+            ![](Assets/Images/2019-03-22-16-18-08.png)
+
+        * 如果不是第一次推送，执行 `git push origin master` 命令即可
 
 ## 4. Git Command List
 
