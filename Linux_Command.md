@@ -29,6 +29,15 @@
 
     ![](Assets/Images/2019-03-20-23-17-27.png)
 
+* `ls -r` ：反序显示
+
+    ![](Assets/Images/2019-03-22-21-45-40.png)
+
+* `file` ：显示文件类型
+
+    ![](Assets/Images/2019-03-22-21-48-49.png)
+    
+
 ## `less`
 
 * `less "filename"` ：浏览文件内容
